@@ -1,5 +1,8 @@
 import { Next } from 'react-bootstrap/esm/PageItem';
 import Listings from '../models/listing.js';
+var mongoose = require('mongoose');
+var express = require('express');
+var app         = express();
 
 export const getListing = async (req, res) => {
     try {
