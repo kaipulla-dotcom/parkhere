@@ -24,11 +24,11 @@ module.exports = {
           .catch(err => res.status(422).json(err));
     },
     createListing: function(req, res) {
-        console.log("+++++++++++REQ.BODY CREATE LISTING+++++++++++++");
+        console.log("req body create listing");
         console.dir(req.body);
         console.log("--");
         console.dir(req.body.location.coordinates[0]);
-        console.log("++++++++++++++++++++++++");
+        console.log("+");
         var a = req.body.location;
         var aTYPEOF = typeof a;
         console.log("typeof is: ", a);
