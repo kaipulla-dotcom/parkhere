@@ -11,11 +11,11 @@ const availSchema = new Schema({
         required: false
     },
     listing: {
-        type: Sschema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Listing"
     },
     renter: {
-        type: Sschema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         default: null
     },
     address: {

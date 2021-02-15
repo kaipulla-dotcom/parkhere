@@ -1,11 +1,68 @@
 // requirements, define port
+const express = require("express");
+const bodyParser = require("body-parser");
+const session = require("express-session");
+const dbConn = require("./dbConn");
+const MongoStore = require("connect-mongo")(session);
+const passport = require("./src/util/passport");
+const routes = require("./routes/api");
+const mongoose = require("mongoose");
+const app = express();
+const PORT = process.env.PORT || 3001;
+const user = require("./routes/user");
+const path = require("path");
 
 // define middleware 
+app.use(express.urlencoded({
+    extended: true
+}));
+app.use(express.json());
+app.use(
+    bodyParser.urlencoded({
+        extended: false
+    })
+);
+app.use(bodyParser.json());
 
 // static assets
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("./public"));
+};
 
-// define API routes
+// session with random string
+app.use(
+    session({
+        secret: "koshka",
+        store: new MongoStore({
+            mongooseConnection: dbConn
+        }),
+        resave: false,
+        saveUninitialized: false
+    })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// define API routes, view
+
+app.use("./API", routes);
+app.use("./user", user);
+
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/index.html"), function(err) {
+        if (err) {
+            res.status(500).send(err);
+        }
+    });
+});
 
 // connect to mongodb
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/parkhere", {
+    useCreateIndex: true,
+    useNewUrlParser: true
+});
 
 // start API server on whichever port we define
+app.listen(PORT, function() {
+    console.log("Now listening on PORT ${PORT}!");
+});
