@@ -2,9 +2,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
-const dbConn = require("./dbConn");
+const dbConn = require("./client/dbConn");
 const MongoStore = require("connect-mongo")(session);
-const passport = require("./src/util/passport");
+const passport = require("./client/src/util/passport");
 const routes = require("./routes/api");
 const mongoose = require("mongoose");
 const app = express();
@@ -49,7 +49,7 @@ app.use("./API", routes);
 app.use("./user", user);
 
 app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./public/index.html"), function(err) {
+    res.sendFile(path.join(__dirname, "./client/public/index.html"), function(err) {
         if (err) {
             res.status(500).send(err);
         }
