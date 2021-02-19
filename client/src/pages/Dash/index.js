@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
-// import ListingCard from "../../components/ListingCard";
-// import ReservCard from "../../components/ReservCard";
+import ListingCard from "../../components/ListingCard";
+import ReservCard from "../../components/ReservCard";
 import API from "../../util/API";
 import "./style.css";
 import Nav from "../../components/Nav";
