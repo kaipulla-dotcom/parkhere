@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
-const passport = require("../src/util/passport");
+const passport = require("../client/src/util/passport");
 const listControl = require("../controllers/listControl");
 
 router.post("/", (req, res) => {
