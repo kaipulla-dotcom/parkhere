@@ -4,6 +4,8 @@ import axios from "axios";
 import SignUp from "./pages/Signup/index";
 import LoginForm from "./pages/Signin/index";
 import Main from "./pages/Main/index";
+import Calendar from "./pages/Calendar";
+import Dash from "./pages/Dash";
 
 class App extends Component {
   constructor() {
@@ -56,6 +58,8 @@ class App extends Component {
             <Route exact path="/" component={LoginForm} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/signin" component={LoginForm} />
+            <Route exact path="/dash" component={Dash} />
+            <Route exact path="/calendar" component={Calendar} />
           </Switch>
         </div>
       </Router>

@@ -106,7 +106,7 @@ class Nav extends Component {
             </Button>
 
             {this.renderRedirect()}
-            <Button color="secondary" title="Account" href="/profile">
+            <Button color="secondary" title="Account" href="/dash">
               <AccountCircleIcon />
             </Button>
             <Button
