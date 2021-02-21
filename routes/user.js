@@ -4,7 +4,7 @@ const User = require("../models/user");
 const passport = require("../client/src/util/passport");
 const listControl = require("../controllers/listControl");
 
-router.post("/user/", (req, res) => {
+router.post("/user", (req, res) => {
   console.log("user signup");
   const {
     username,
