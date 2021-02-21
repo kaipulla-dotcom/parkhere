@@ -151,7 +151,7 @@ class LoginForm extends Component {
     console.log("handleSubmit");
 
     axios
-      .post("/user/login", {
+      .post("/login", {
         username: this.state.username,
         password: this.state.password
       })
@@ -193,7 +193,7 @@ class LoginForm extends Component {
       });
 
       axios
-        .post("/user/", {
+        .post("/user", {
           username: this.state.username,
           password: this.state.password,
           firstName: this.state.firstName,

@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster|Roboto&display=swap");
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#map {
+  height: 80vh;
+  width: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  /* background-image: unset; */
+}
+.DayPicker-Month {
+  margin: 1.2em 0 !important;
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  background: #72b2bf !important;
+}
+
+.DayPicker-Day--today {
+  color: #e24e28 !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.gm-style .gm-style-iw-c {
+  padding-bottom: 12px !important;
+  padding-right: 12px !important;
+  max-width: 180px;
+}
