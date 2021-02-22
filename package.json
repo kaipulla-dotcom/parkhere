@@ -19,6 +19,9 @@
     "concurrently": "^4.1.2",
     "nodemon": "^1.19.4"
   },
+  "engines": {
+    "node": "^12.14.0"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
@@ -28,12 +31,14 @@
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "concurrently": "^4.1.2",
     "connect-mongo": "^3.2.0",
     "express": "^4.16.3",
     "express-session": "^1.17.0",
     "if-env": "^1.0.4",
     "moment": "^2.29.1",
     "mongoose": "^5.3.16",
+    "nodemon": "^1.19.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "prop-types": "^15.7.2",
@@ -43,9 +48,7 @@
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.2",
-    "react-text-mask": "^5.4.3",
-    "concurrently": "^4.1.2",
-    "nodemon": "^1.19.4"
+    "react-text-mask": "^5.4.3"
   },
   "repository": {
     "type": "git",
