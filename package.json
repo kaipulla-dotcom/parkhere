@@ -36,14 +36,7 @@
     "mongoose": "^5.11.17",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.14.0",
-    "react-dates": "^21.8.0",
-    "react-day-picker": "^7.4.8",
-    "react-dom": "^16.14.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.2",
-    "react-text-mask": "^5.4.3"
+    "prop-types": "^15.7.2"
   },
   "repository": {
     "type": "git",
