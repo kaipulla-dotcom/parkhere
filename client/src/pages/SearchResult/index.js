@@ -4,7 +4,7 @@ import "./style.css";
 import axios from "axios";
 import DayPicker, { DateUtils } from "react-day-picker";
 import "react-day-picker/lib/style.css";
-import API from "../../utils/API";
+import API from "../../util/API";
 import moment from "moment";
 
 import PropTypes, { func } from "prop-types";
