@@ -193,7 +193,7 @@ class LoginForm extends Component {
       });
 
       axios
-        .post("/user", {
+        .post("http://localhost:3001/user", {
           username: this.state.username,
           password: this.state.password,
           firstName: this.state.firstName,
