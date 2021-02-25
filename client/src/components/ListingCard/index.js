@@ -213,7 +213,7 @@ class ListingCard extends React.Component {
       address: this.props.address,
       city: this.props.city,
       state: this.props.state,
-      zipcode: this.props.zipcode,
+      zip: this.props.zip,
       currentModalId: this.props.id,
       //Material UI card
       expanded: false,
@@ -379,7 +379,7 @@ class ListingCard extends React.Component {
                 fullWidth
                 value={this.state.zip}
                 onChange={this.handleInputChange}
-                label="Zipcode"
+                label="Zip"
                 variant="outlined"
               />
             </form>
