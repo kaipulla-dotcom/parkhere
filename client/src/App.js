@@ -29,11 +29,17 @@ class App extends Component {
   }
 
   updateUser(userObject) {
+    console.log("what am I getting? ", userObject);
     this.setState(userObject);
   }
 
   getUser() {
-    axios.get("/user/").then(response => {
+    console.log("this state id = ",this.state);
+    axios.get("/user/", {
+      params: {
+        id: this.state.id
+      }
+    }).then(response => {
       console.log(response.data);
       if (response.data.user) {
         this.setState({
@@ -57,10 +63,14 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path="/main" component={Main} />
-            <Route exact path="/" component={LoginForm} />
+            <Route exact path="/" render={() => ( 
+                <LoginForm updateUser={(userObj) => this.updateUser(userObj)} />
+            )}/>
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/signin" component={LoginForm} />
-            <Route exact path="/dash" component={Dash} />
+            <Route exact path="/dash" render={() => (
+                  <Dash user={this.state.id} />
+            )} />
             <Route exact path="/calendar" component={Calendar} />
             <Route exact path="/addlisting" component={AddListing} />
             <Route exact path="/searchresult" component={SearchResult} />

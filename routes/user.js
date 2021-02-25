@@ -38,6 +38,18 @@ router.post("/", (req, res) => {
   });
 });
 
+
+router.get("/", (req, res) => {
+  console.log("User GET ",req.query.id);
+  User.findOne({ _id: req.query.id }, (err, user) => {
+    if (err) {
+      console.log("User.js post error: ", err);
+    } else if (user) {
+      res.json(user);
+    }
+  });
+});
+
 router.post(
   "/login",
   function(req, res, next) {
