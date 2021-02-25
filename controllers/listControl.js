@@ -205,7 +205,7 @@ module.exports = {
     updateUser: function(req, res) {
         db.User.findOneAndUpdate({_id: req.params.id}, req.body)
             .then(function() {
-                Users.findOne({_id: req.params.id}).then(function(data) {
+                User.findOne({_id: req.params.id}).then(function(data) {
                     res.send(data);
             });
         });
