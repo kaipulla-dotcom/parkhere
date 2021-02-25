@@ -23,7 +23,7 @@ router.post('/user', async (req, res) => {
   }
 });*/
 
-router.post("/", (req, res) => {
+router.post("/user", (req, res) => {
   console.log("user signup");
   const {
     username,

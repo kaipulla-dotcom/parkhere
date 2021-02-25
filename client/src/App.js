@@ -6,6 +6,8 @@ import LoginForm from "./pages/Signin/index";
 import Main from "./pages/Main/index";
 import Calendar from "./pages/Calendar";
 import Dash from "./pages/Dash";
+import SearchResult from "./pages/SearchResult";
+import AddListing from "./pages/AddListing";
 
 class App extends Component {
   constructor() {
@@ -60,6 +62,8 @@ class App extends Component {
             <Route exact path="/signin" component={LoginForm} />
             <Route exact path="/dash" component={Dash} />
             <Route exact path="/calendar" component={Calendar} />
+            <Route exact path="/addlisting" component={AddListing} />
+            <Route exact path="/searchresult" component={SearchResult} />
           </Switch>
         </div>
       </Router>

@@ -11,7 +11,7 @@ export default {
     return axios.get("/api/listing");
   },
   getListingsForProf: function() {
-    return axios.get("/api/listing/profile");
+    return axios.get("/api/listing/dash");
   },
   getReservForProf: function(id) {
     // console.log(id);
@@ -55,10 +55,10 @@ export default {
     });
   },
   editListing: function(listing) {
-    return axios.put("api/listing/profile", { listing });
+    return axios.put("api/listing/dash", { listing });
   },
   deleteListing: function(id) {
-    return axios.delete("/api/listing/profile/" + id);
+    return axios.delete("/api/listing/dash/" + id);
   },
   updateAvailabilityInProfile: function(newData) {
     return axios.post("/api/availability/update", newData);

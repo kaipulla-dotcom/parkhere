@@ -9,11 +9,11 @@ router
 router.route("/near").get(listControl.findAllNear);
 
 router
-  .route("/profile")
+  .route("/dash")
   .get(listControl.findAllProfListing)
   .put(listControl.editListing);
 
-router.route("/profile/:id").delete(listControl.deleteListing);
+router.route("/dash/:id").delete(listControl.deleteListing);
 
 router.route("/reserved/").get(listControl.findReserved);
 
