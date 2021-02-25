@@ -4,8 +4,12 @@ export default {
   saveListing: function(listingData) {
     return axios.post("/api/listing", listingData);
   },
-  getUser: function() {
-    return axios.get("/user");
+  getUser: function(id) {
+    return axios.get("/user", {
+      params: {
+        id
+      }
+    });
   },
   getListings: function() {
     return axios.get("/api/listing");

@@ -111,16 +111,16 @@ class Dash extends Component {
   }
 
   userInfo = () => {
-    API.getUser()
+    console.log("user information = ", this.props.user);
+    API.getUser(this.props.user)
       .then(res => {
         console.log("=======");
         console.log(res);
         console.log("=======");
         this.setState({ user: res.data });
-        this.setState({ userId: res.data.user.id });
-        this.setState({ firstname: res.data.user.firstName });
-        this.setState({ lastname: res.data.user.lastName });
-        this.setState({ photo: res.data.user.photo });
+        this.setState({ userId: res.data._id });
+        this.setState({ firstname: res.data.firstName });
+        this.setState({ lastname: res.data.lastName });
         this.loadListings();
         this.loadReserved();
       })
