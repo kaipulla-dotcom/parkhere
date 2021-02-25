@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+const url_user = 'http://localhost:3000/user';
+
 class SignUp extends Component {
   constructor() {
     super();
@@ -27,7 +29,7 @@ class SignUp extends Component {
 
     //request to server to add a new username/password
     axios
-      .post("/user/", {
+      .post(url_user, {
         username: this.state.username,
         password: this.state.password,
         firstName: this.state.firstName,

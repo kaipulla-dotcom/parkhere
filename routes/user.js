@@ -1,8 +1,27 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/user");
-const passport = require("../client/src/util/passport");
-const listControl = require("../controllers/listControl");
+const User = require("../../models/user");
+const passport = require("../../client/src/util/passport");
+const listControl = require("../../controllers/listControl");
+const url_user = 'http://localhost:3000/user';
+
+/*
+router.post('/user', async (req, res) => {
+  const user = new User( {
+    username: req.body.username,
+    password: req.body.password,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    dob: req.body.dob
+  })
+  try {
+      const newUser = await user.save();
+      res.status(201).json(newUser);
+  } catch (error) {
+      res.status(400).json({message: error.message});
+  }
+});*/
 
 router.post("/", (req, res) => {
   console.log("user signup");
@@ -56,7 +75,7 @@ router.post(
   }
 );
 
-router.route("/").get(listControl.findUser);
+router.route("/").get(listControl.findAll);
 
 router.post("/logout", (req, res) => {
   if (req.user) {
