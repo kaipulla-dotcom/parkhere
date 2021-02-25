@@ -184,12 +184,12 @@ class AddListing extends Component {
   //Validation function
   validate = () => {
     let titleError = "";
-    let parkingtypeError = "";
+    let spotTypeError = "";
     let priceError = "";
     let addressError = "";
     let cityError = "";
     let stateError = "";
-    let zipcodeError = "";
+    let zipError = "";
 
     if (!this.state.title) {
       titleError = "title cannot be empty";
@@ -209,7 +209,7 @@ class AddListing extends Component {
     if (!this.state.state) {
       stateError = "state cannot be empty";
     }
-    if (isNaN(this.state.zip) || !this.state.zipcode) {
+    if (isNaN(this.state.zip) || !this.state.zip) {
       zipError = "zip cannot be empty";
     }
     if (
