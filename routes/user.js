@@ -3,8 +3,10 @@ const router = express.Router();
 const User = require("../models/user");
 const passport = require("../client/src/util/passport");
 const listControl = require("../controllers/listControl");
+const url_user = 'http://localhost:3000/user';
 
-router.post("/user", (req, res) => {
+
+router.post("/", (req, res) => {
   console.log("user signup");
   const {
     username,
@@ -18,9 +20,7 @@ router.post("/user", (req, res) => {
     if (err) {
       console.log("User.js post error: ", err);
     } else if (user) {
-      res.json({
-        error: `Sorry, already a user with the username: ${username}`
-      });
+      res.json(user);
     } else {
       const newUser = new User({
         username: username,
@@ -56,7 +56,7 @@ router.post(
   }
 );
 
-router.route("/").get(listControl.findUser);
+router.route("/").get(listControl.findAll);
 
 router.post("/logout", (req, res) => {
   if (req.user) {

@@ -9,8 +9,11 @@ const routes = require("./routes/api");
 const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const user = require("./routes/user");
+const user = require("./routes/user.js");
 const path = require("path");
+const cors = require('cors')
+
+app.use(cors());
 
 // define middleware 
 app.use(express.urlencoded({
@@ -45,8 +48,10 @@ app.use(passport.session());
 
 // define API routes, view
 
-app.use("./API", routes);
-app.use("./user", user);
+app.use("/API", routes);
+app.use("/user", user);
+app.use("/login", user);
+
 
 app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "./client/public/index.html"), function(err) {
@@ -64,5 +69,5 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/parkhere", {
 
 // start API server on whichever port we define
 app.listen(PORT, function() {
-    console.log("Now listening on PORT ${PORT}!");
+    console.log("Now listening on PORT 3001!");
 });

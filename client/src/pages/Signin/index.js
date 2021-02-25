@@ -22,6 +22,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
+const url_user = 'http://localhost:3001/user';
+const url_login = 'http://localhost:3001/user/login';
 
 const styles = theme => ({
   paper: {
@@ -160,13 +162,16 @@ class LoginForm extends Component {
         console.log(response);
         if (response.status === 200) {
           // update App.js state
-          this.props.updateUser({
-              loggedIn: true,
-              username: response.data.username
-          })
+          // this.props.updateUser({
+          //     loggedIn: true,
+          //     username: response.data.username
+          // })
           // update the state to redirect to home
+          
           this.setState({
-            redirectTo: "/searchresult"
+            redirectTo: "/dash",
+            username: username,
+            password: password
           });
         }
       })
@@ -193,7 +198,7 @@ class LoginForm extends Component {
       });
 
       axios
-        .post("/user", {
+        .post(url_user, {
           username: this.state.username,
           password: this.state.password,
           firstName: this.state.firstName,
