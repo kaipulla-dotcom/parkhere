@@ -628,10 +628,10 @@ class SearchResult extends Component {
                                         id={spot[0]._id}
                                         city={spot[0].city}
                                         state={spot[0].state}
-                                        zipcode={spot[0].zipcode}
+                                        zip={spot[0].zip}
                                         address={spot[0].address}
                                         price={spot[0].price}
-                                        parkingtype={spot[0].parkingtype}
+                                        spotType={spot[0].spotType}
                                         handleBookClick={this.handleBookClick}
                                       >
                                         <img

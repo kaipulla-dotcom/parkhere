@@ -60,7 +60,7 @@ function AddressForm(props) {
           }
           helperText="Select spot type"
           margin="normal"
-          name="parkingtype"
+          name="spotType"
         >
           {ranges.map(option => (
             <MenuItem key={option.value} value={option.value}>
@@ -71,7 +71,7 @@ function AddressForm(props) {
         <div
           style={{ fontFamily: "Roboto", color: "#DB5461", fontSize: "12px" }}
         >
-          {props.parkingtypeError}
+          {props.spotTypeError}
         </div>
 
         {/* // PRICE */}
