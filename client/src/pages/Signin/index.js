@@ -468,14 +468,14 @@ class LoginForm extends Component {
                 <DialogActions>
                   <Button
                     onClick={() => this.handleSubmitForm()}
-                    color="error"
+                    color="primary"
                     variant="outlined"
                   >
                     Sign Up
                   </Button>
                   <Button
                     onClick={() => this.handleClose()}
-                    color="error"
+                    color="primary"
                     variant="outlined"
                   >
                     Cancel
