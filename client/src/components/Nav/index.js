@@ -81,7 +81,7 @@ class Nav extends Component {
         <AppBar
           position="static"
           style={{
-            background: "#fff5b5"
+            background: "#ffc233"
           }}
           elevation={1}
         >
