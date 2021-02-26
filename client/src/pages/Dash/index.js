@@ -144,6 +144,7 @@ class Dash extends Component {
   processReserved = reserved => {
     // array isn't great for listing by date so we create an object
     let reservationsObject = {};
+    if(reserved != null) {
     reserved.forEach(reservation => {
       reservationsObject[reservation.listing] =
         reservationsObject[reservation.listing] || reservation; // init listing key with reservation
@@ -154,7 +155,7 @@ class Dash extends Component {
         { date: reservation.date, reservationId: reservation._id }
       ]; //add new reservation to listing
     });
-
+  }
     this.setState({
       reservationsObject
     });
