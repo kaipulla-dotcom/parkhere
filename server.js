@@ -61,11 +61,6 @@ app.get("*", function(req, res) {
     });
 });
 
-// connect to mongodb
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/parkhere", {
-    useCreateIndex: true,
-    useNewUrlParser: true
-});
 
 // start API server on whichever port we define
 app.listen(PORT, function() {
