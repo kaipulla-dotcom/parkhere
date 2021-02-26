@@ -51,7 +51,6 @@
   "bugs": {
     "url": "https://github.com/kaipulla-dotcom/parkhere/issues"
   },
-  "homepage": "https://github.com/kaipulla-dotcom/parkhere#readme",
   "browserslist": {
     "production": [
       ">0.2%",

@@ -1,4 +1,5 @@
 {
+    "homepage": "https://kaipulla-dotcom.github.io/parkhere/",
     "name": "ParkHere",
     "version": "0.1.0",
     "private": true,
@@ -14,6 +15,8 @@
         "react-text-mask": "^5.4.3"
     },
     "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",    
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
