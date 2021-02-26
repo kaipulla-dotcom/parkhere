@@ -1,12 +1,9 @@
 {
-  "homepage": "https://kaipulla-dotcom.github.io/parkhere/",
   "name": "ParkHere",
   "version": "1.0.0",
   "description": "ParkHere",
   "main": "server.js",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
@@ -51,6 +48,7 @@
   "bugs": {
     "url": "https://github.com/kaipulla-dotcom/parkhere/issues"
   },
+  "homepage": "https://github.com/kaipulla-dotcom/parkhere#readme",
   "browserslist": {
     "production": [
       ">0.2%",
