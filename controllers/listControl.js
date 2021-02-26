@@ -25,13 +25,7 @@ module.exports = {
         console.log("req body create listing");
         console.dir(req.body);
         console.log("--");
-        console.dir(req.body.location.coordinates[0]);
-        console.log("+");
-        var a = req.body.location;
-        var aTYPEOF = typeof a;
-        console.log("typeof is: ", a);
-    
-        req.body.location.type = "Point";
+        console.log("+");  
     
         db.Listing.create(req.body)
           .then(dbModel => res.json(dbModel))
@@ -64,7 +58,7 @@ module.exports = {
           .catch(err => res.status(422).json(err));
     },
     findAllProfListing: function(req, res) {
-        db.Listing.find(req.query)
+        db.Listing.find({ renter: req.query.user })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
     },
@@ -118,8 +112,7 @@ module.exports = {
                     }
                 }
             }
-        })
-            .find((error, results) => {
+        }).find((error, results) => {
                 if (error) console.log(error);
                 console.log(JSON.stringify(results, 0, 2));
             })

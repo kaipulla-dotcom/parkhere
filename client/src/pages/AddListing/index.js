@@ -174,11 +174,11 @@ class AddListing extends Component {
         cityError: "",
         stateError: "",
         zipError: ""
-      },
-      () => {
-        this.props.history.push("/dash");
       }
     );
+    this.setState({
+      redirectTo: "/dash"
+    });
   };
 
   //Validation function
@@ -298,7 +298,31 @@ class AddListing extends Component {
             },
             () => {
               let location = this.state.fulladdress;
+              console.log("this state user id = ", this.state.id);
+              API.saveListing({
+                user: this.state.user._id,
+                title: this.state.title,
+                spotType: this.state.spotType || "None",
+                price: this.state.price,
+                address: this.state.address,
+                city: this.state.city,
+                state: this.state.state,
+                zip: this.state.zip
+              })
+                .then(res => {
+                  this.state.selectedDays.map(date => {
+                    const listingId = res.data._id;
 
+                    API.createAvailability({
+                      date,
+                      listing: listingId
+                      // .map over all selected dates in array and create a new row in the avail collection for each date and include the the the id of listing
+                    });
+                  });
+                  this.handleClose();
+                })
+                .catch(err => console.log(err));
+              /*
               axios
                 .get("https://maps.googleapis.com/maps/api/geocode/json", {
                   params: {
@@ -336,38 +360,11 @@ class AddListing extends Component {
                       photo: queryUrl
                     },
                     () => {
-                      API.saveListing({
-                        user: this.state.user._id,
-                        title: this.state.title,
-                        spotType: this.state.spotType || "None",
-                        photo: this.state.photo,
-                        price: this.state.price,
-                        address: this.state.address,
-                        city: this.state.city,
-                        state: this.state.state,
-                        zip: this.state.zip,
-                        streetName,
-                        neighbor,
-                        location: {
-                          coordinates: [longitude, latitude]
-                        }
-                      })
-                        .then(res => {
-                          this.state.selectedDays.map(date => {
-                            const listingId = res.data._id;
-
-                            API.createAvailability({
-                              date,
-                              listing: listingId
-                              // .map over all selected dates in array and create a new row in the avail collection for each date and include the the the id of listing
-                            });
-                          });
-                          this.handleClose();
-                        })
-                        .catch(err => console.log(err));
+                      //the working code here
+                      //TODO Tamil will copy it here
                     }
                   );
-                });
+                });*/
             }
           );
         }

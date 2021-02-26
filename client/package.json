@@ -2,7 +2,7 @@
     "name": "ParkHere",
     "version": "0.1.0",
     "private": true,
-    "proxy": "http://localhost:3001",
+    "proxy": "http://localhost:3001/",
     "dependencies": {
         "axios": "^0.18.1",
         "react": "^16.14.0",
