@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const uri = (process.env.MONGODB_URI || "mongodb://localhost/parkhere");
+const MongoDB_URI = "mongodb+srv://parkhereuser:p58RCkbjeX7wjnC7@cluster0.2mmae.mongodb.net/parkhere";
 
-mongoose.connect(uri).then(
+mongoose.connect(MongoDB_URI, {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(
     () => { 
         console.log('Connected to Mongo');
         
