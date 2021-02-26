@@ -101,8 +101,11 @@ class Nav extends Component {
             <Button color="secondary" href="/searchresult">
               Search
             </Button>
-            <Button color="secondary" href="/addlisting">
-              Create
+            <Button color="secondary" onClick={
+              () => {this.setState({
+                        redirectTo: "/addlisting"
+              });}
+              } >              Create
             </Button>
 
             {this.renderRedirect()}

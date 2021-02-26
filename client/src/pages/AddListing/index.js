@@ -76,7 +76,6 @@ class AddListing extends Component {
       city: "",
       state: "",
       zip: "",
-      user: {},
       fulladdress: "",
       coordinates: {},
       longitude: 0.0,
@@ -173,12 +172,10 @@ class AddListing extends Component {
         addressError: "",
         cityError: "",
         stateError: "",
-        zipError: ""
+        zipError: "",
+        redirectTo: "/dash"
       }
     );
-    this.setState({
-      redirectTo: "/dash"
-    });
   };
 
   //Validation function
