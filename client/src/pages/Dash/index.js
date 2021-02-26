@@ -134,8 +134,10 @@ class Dash extends Component {
   }
 
   loadListings = () => {
+    console.log("user id before load listings = ", this.props.user);
     API.getListingsForProf(this.props.user)
       .then(res => {
+        console.log("received the listing information for the user ", res.data);
         this.setState({ listing: res.data });
       })
       .catch(err => console.log(err));
@@ -295,6 +297,7 @@ class Dash extends Component {
                           <h1>LISTINGS</h1>
                           <div className={classes.cardContainer}>
                             {this.state.listing.map(listing => {
+                              console.log("listing is an array = ", listing.city)
                               if (listing.user === this.state.userId) {
                                 return (
                                   <div>
@@ -309,9 +312,6 @@ class Dash extends Component {
                                       state={listing.state}
                                       zip={listing.zip}
                                       handleEditListing={this.handleEditListing}
-                                      handleAvailListing={
-                                        this.handleAvailListing
-                                      }
                                     />
                                   </div>
                                 );

@@ -76,6 +76,9 @@ class Nav extends Component {
 
   render() {
     const { classes } = this.props;
+    if (this.state.redirectTo) {
+      return <Redirect to={{ pathname: this.state.redirectTo }} />;
+    }     
     return (
       <div className={classes.root}>
         <AppBar
@@ -101,8 +104,11 @@ class Nav extends Component {
             <Button color="secondary" href="/searchresult">
               Search
             </Button>
-            <Button color="secondary" href="/addlisting">
-              Create
+            <Button color="secondary" onClick={
+              () => {this.setState({
+                        redirectTo: "/addlisting"
+              });}
+              } >              Create
             </Button>
 
             {this.renderRedirect()}

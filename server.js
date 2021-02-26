@@ -64,5 +64,5 @@ app.get("*", function(req, res) {
 
 // start API server on whichever port we define
 app.listen(PORT, function() {
-    console.log("Now listening on PORT 3001!");
+    console.log("Server Started!");
 });

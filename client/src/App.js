@@ -72,7 +72,10 @@ class App extends Component {
                   <Dash user={this.state.id} />
             )} />
             <Route exact path="/calendar" component={Calendar} />
-            <Route exact path="/addlisting" component={AddListing} />
+            <Route exact path="/addlisting" render={() => (
+                  <AddListing user={this.state.id} />
+            )}
+            />
             <Route exact path="/searchresult" component={SearchResult} />
           </Switch>
         </div>
