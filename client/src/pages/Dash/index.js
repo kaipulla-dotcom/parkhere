@@ -119,8 +119,9 @@ class Dash extends Component {
         console.log("=======");
         this.setState({ user: res.data });
         this.setState({ userId: res.data._id });
-        this.setState({ firstname: res.data.firstName });
-        this.setState({ lastname: res.data.lastName });
+        this.setState({ username: res.data.username });
+        this.setState({ firstName: res.data.firstName });
+        this.setState({ lastName: res.data.lastName });
         this.loadListings();
         this.loadReserved();
       })
@@ -133,8 +134,7 @@ class Dash extends Component {
   }
 
   loadListings = () => {
-    API.getListingsForProf()
-
+    API.getListingsForProf(this.props.user)
       .then(res => {
         this.setState({ listing: res.data });
       })
@@ -161,8 +161,9 @@ class Dash extends Component {
   };
 
   loadReserved = () => {
-    API.getReservForProf(this.state.userId)
+    API.getReservForProf(this.props.user)
       .then(res => {
+        console.log("inside loadReserved method = ", res);
         this.processReserved(res.data);
         this.setState({ reserved: res.data });
       })
@@ -171,20 +172,19 @@ class Dash extends Component {
   };
 
   loadReserved3 = () => {
-    API.getReservForProf(this.state.userId)
+    API.getReservForProf(this.props.user)
       .then(res => {
         this.setState({ reserved: res.data });
-        console.log("RESERVATIONS");
+        console.log("RESERVATIONS3");
         console.log(res.data);
       })
-
       .catch(err => console.log(err));
   };
   loadReserved2 = () => {
-    API.getReservForProf()
+    API.getReservForProf(this.props.user)
       .then(res => {
         this.setState({ reserved: res.data });
-        console.log("RESERVATIONS");
+        console.log("RESERVATIONS2");
         console.log(res.data);
       })
 

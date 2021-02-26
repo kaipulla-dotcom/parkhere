@@ -38,7 +38,6 @@ router.post("/", (req, res) => {
   });
 });
 
-
 router.get("/", (req, res) => {
   console.log("User GET ",req.query.id);
   User.findOne({ _id: req.query.id }, (err, user) => {

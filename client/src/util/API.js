@@ -19,7 +19,11 @@ export default {
   },
   getReservForProf: function(id) {
     // console.log(id);
-    return axios.get("/api/listing/reserved/");
+    return axios.get("/api/listing/reserved/", {
+      params: {
+        id
+      }
+    });
   },
   getReservById: function(id) {
     return axios.get("api/listings/reserved", {
