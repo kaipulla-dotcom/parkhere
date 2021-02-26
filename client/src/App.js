@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   getUser() {
-    console.log("this state id = ",this.state);
+    console.log("this state id = ",);
     axios.get("/user/", {
       params: {
         id: this.state.id
