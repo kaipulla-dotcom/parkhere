@@ -76,6 +76,9 @@ class Nav extends Component {
 
   render() {
     const { classes } = this.props;
+    if (this.state.redirectTo) {
+      return <Redirect to={{ pathname: this.state.redirectTo }} />;
+    }     
     return (
       <div className={classes.root}>
         <AppBar

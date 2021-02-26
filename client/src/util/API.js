@@ -17,7 +17,7 @@ export default {
   getListingsForProf: function(user) {
     return axios.get("/api/listing/dash", {
       params: {
-        user
+        userId: user
       }
     });
   },

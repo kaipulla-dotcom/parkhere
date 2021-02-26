@@ -58,7 +58,8 @@ module.exports = {
           .catch(err => res.status(422).json(err));
     },
     findAllProfListing: function(req, res) {
-        db.Listing.find({ renter: req.query.user })
+        console.log("reached findall listings ", req.query.userId);
+        db.Listing.find({ user: req.query.userId })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
     },

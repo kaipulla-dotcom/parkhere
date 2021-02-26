@@ -295,9 +295,9 @@ class AddListing extends Component {
             },
             () => {
               let location = this.state.fulladdress;
-              console.log("this state user id = ", this.state.id);
+              console.log("this state user id = ", this.props.user);
               API.saveListing({
-                user: this.state.user._id,
+                user: this.props.user,
                 title: this.state.title,
                 spotType: this.state.spotType || "None",
                 price: this.state.price,
