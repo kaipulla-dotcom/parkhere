@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-//const MongoDB_URI = process.env.MONGODB_URI;
+const MongoDB_URI = process.env.MONGODB_URI;
 
-const MongoDB_URI = "mongodb://localhost/parkhere";
+//const MongoDB_URI = "mongodb://localhost/parkhere";
 
 mongoose.connect(MongoDB_URI, {
     useCreateIndex: true,
