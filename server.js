@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 
 // static assets
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("./client/public"));
+    app.use(express.static(__dirname+'/client/build'));
 };
 
 // session with random string
