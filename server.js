@@ -52,16 +52,6 @@ app.use("/API", routes);
 app.use("/user", user);
 app.use("/login", user);
 
-
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./client/public/index.html"), function(err) {
-        if (err) {
-            res.status(500).send(err);
-        }
-    });
-});
-
-
 // start API server on whichever port we define
 app.listen(PORT, function() {
     console.log("Server Started!");
