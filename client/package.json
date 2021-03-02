@@ -1,6 +1,7 @@
 {
     "name": "ParkHere",
     "version": "0.1.0",
+    "homepage": "https://parkhere-cs633.herokuapp.com/",
     "private": true,
     "proxy": "http://localhost:3001",
     "dependencies": {
